@@ -14,7 +14,7 @@ public class AutomationPracticeForm {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.startMaximized = true; //
+        Configuration.startMaximized = true;
     }
 
     @Test
