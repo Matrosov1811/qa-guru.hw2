@@ -39,7 +39,7 @@ public class AutomationPracticeForm {
         $(byText("Sports")).click();
         $(byText("Reading")).click();
         $(byText("Music")).click();
-        File file = $("#uploadPicture").uploadFile(new File("src/main/resources/qa-guru.PNG"));
+        File file = $("#uploadPicture").uploadFile(new File("src/test/resources/qa-guru.PNG"));
         $("#currentAddress").setValue("Some address");
         $("#state").click();
         $("#react-select-3-option-0").click();
