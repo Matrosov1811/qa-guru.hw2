@@ -12,6 +12,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AutomationPracticeForm {
 
+    Steps steps = new Steps();
+
     @BeforeAll
     static void beforeAll() {
         Configuration.startMaximized = true;
@@ -20,12 +22,8 @@ public class AutomationPracticeForm {
     @Test
     void fillFormTest() {
         open("https://demoqa.com/automation-practice-form");
-        $("#firstName").setValue("Some firstName");
-        $("#lastName").setValue("Some lastName");
-        $("#userEmail").setValue("example@email.qa");
-        $(byText("Female")).click();
-        $(byText("Other")).click();
-        $(byText("Male")).click();
+        steps.step1();
+        steps.step2();
         $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOptionByValue("10");
@@ -61,9 +59,7 @@ public class AutomationPracticeForm {
         checkTable("State and City", "NCR Delhi");
     }
 
-        private void checkTable(String label, String text) {
-            $(".table-responsive").$(byText(label)).parent().shouldHave(text(text));
-        }
+    private void checkTable(String label, String text) {
+        $(".table-responsive").$(byText(label)).parent().shouldHave(text(text));
     }
-
-
+}
